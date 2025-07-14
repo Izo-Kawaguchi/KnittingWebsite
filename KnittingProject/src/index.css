@@ -1,1 +1,64 @@
 @import "tailwindcss";
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(13px) translateX(0);
+    }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-15px) translateX(10px);
+  }
+}
+
+@keyframes floatMedium {
+  0%, 100% {
+    transform: translateY(-5px) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(5px);
+  }
+}
+
+@keyframes floatFast {
+  0%, 100% {
+    transform: translateY(5px) translateX(0);
+  }
+  50% {
+    transform: translateY(-10px) translateX(8px);
+  }
+}
+
+.animate-cloudSlow {
+  animation: floatSlow 8s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-cloudMedium {
+  animation: floatMedium 6s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-cloudFast {
+  animation: floatFast 4s ease-in-out infinite;
+  animation-delay: 0.1s;
+}
+
+
+.animate-float {
+  animation: float 2s ease-in-out infinite;
+  animation-delay: 0.1s;
+}
+/* Ensure smooth transitions for the animations */
+img[class*="animate-"] {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}

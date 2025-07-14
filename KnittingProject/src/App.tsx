@@ -1,78 +1,78 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Navbar from "./Parts/Navbar";
+import Navbar from "./Components/Navbar";
+import CloudText from "./Components/CloudText";
 
 
 function App() {
   return (
     <div>
       <Navbar />
+      
       <Parallax pages={2}>
-      <ParallaxLayer>
+
+      <ParallaxLayer
+      speed={0.2}>
+        <div
+          className="bg-[url('/BG.png')] bg-[length:100%_100%] bg-no-repeat h-full w-full"
+        ></div>
+      </ParallaxLayer>
+        
+      <ParallaxLayer
+        offset={.55}
+        speed={0.5}
+        >
           <div
-            className="bg-[url('/Images/BG.jpg')] bg-cover h-screen w-full"
+            className="bg-[url('/Mountain.png')] bg-no-repeat bg-contain bg-center bg-fixed h-[100vh] w-full"
           ></div>
         </ParallaxLayer>
 
-
         <ParallaxLayer
-        offset={2}
+          speed={0.9}
         >
-          <div
-            className="mask-l-from-90% mask-l-to-100% bg-[url('/Images/test.png')] bg-no-repeat h-screen w-full"
-            style={{
-              backgroundAttachment: 'fixed',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center bottom',
-              minHeight: '100vh'
-            }}
-          ></div>
+          <CloudText />
         </ParallaxLayer>
         
         <ParallaxLayer  
-          offset={1}
+          offset={0.81}
+          speed={0.6}
         >
           <div
-            className="mask-l-from-90% mask-l-to-100% bg-[url('/Images/hillBottom.png')] bg-no-repeat w-full h-screen"
-            style={{
-              backgroundAttachment: 'fixed',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center bottom',
-              minHeight: '100vh'
-            }}
+            className="bg-[url('/hillBottom.png')] bg-no-repeat bg-cover bg-center bg-fixed h-[100vh] w-full"
           ></div>
         </ParallaxLayer>
 
-        <ParallaxLayer
-          speed={0.5}
-          sticky={{ start: 0, end: 1 }}
-        >
-          <div className="flex justify-center items-center h-full font-kepler">
-            <h1 className='text-[300px] font-medium text-[#374a70]'>Dragi Knits</h1>
-          </div>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={0.4}
-          speed={0.3}
-        >
-          <div className="flex justify-center items-center h-full font-kepler">
-            <h2 className='text-6xl font-bold text-[#2a3d5c] opacity-80'>
-              Handcrafted with Love
-            </h2>
-          </div>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={2}
-          speed={0.5}
-        >
-          <div className="flex justify-center items-center h-full font-kepler">
-            <h2 className='text-5xl font-extrabold text-blue-600 dark:text-sky-400'> This is a test hopefully it works.</h2>
+        <ParallaxLayer speed={0.3}>
+          <div className="relative w-full h-full">
+            {/* Cloud 1 cowabunga! */}
+            <img
+              src="/Clouds/Cloud1.png" alt="Cloud"
+              className="absolute top-20 left-[350px] w-100 opacity-80 animate-cloudSlow"
+            />
+            {/* Cloud 1 cool cloud*/}
+            <img
+              src="/Clouds/Cloud1.png" alt="Cloud"
+              className="absolute top-60 left-[80px] w-48 opacity-30 animate-cloudFast"
+            />
+            {/* Cloud 3 */}
+            <img
+              src="/Clouds/Cloud2.png" alt="Cloud"
+              className="absolute top-120 left-[800px] w-60 opacity-30 animate-cloudMedium"
+            />
+            {/* Cloud 4 */}
+            <img
+              src="/Clouds/Cloud3.png" alt="Cloud"
+              className="absolute top-20 left-[1000px] w-60 opacity-40 animate-cloudMedium"
+            />
+            {/* Cloud 5 */}
+            <img
+              src="/Clouds/Cloud3.png" alt="Cloud"
+              className="absolute top-5 left-[-100px] w-60 opacity-40 animate-cloudMedium"
+            />
           </div>
         </ParallaxLayer>
       </Parallax>
     </div>
   );
-}
+} 
 
 export default App;
