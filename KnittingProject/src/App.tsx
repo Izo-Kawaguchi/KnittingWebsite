@@ -1,15 +1,16 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Navbar from "./Components/Navbar";
 import CloudText from "./Components/CloudText";
+import Footer from "./Components/Footer";
+
 
 
 function App() {
   return (
-    <div>
+    <div className="App min-h-screen">
       <Navbar />
-      
-      <Parallax pages={2}>
-
+      <main className="min-h-[200vh] pb-32"> {/* Extra padding at bottom for footer */}
+        <Parallax pages={2} style={{ top: '0', left: '0' }}>
       <ParallaxLayer
       speed={0.2}>
         <div
@@ -70,7 +71,10 @@ function App() {
             />
           </div>
         </ParallaxLayer>
-      </Parallax>
+        </Parallax>
+      </main>
+      
+      <Footer />
     </div>
   );
 } 

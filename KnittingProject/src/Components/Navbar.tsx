@@ -10,7 +10,6 @@ const Navbar = () => {
     { title: 'Home', subtitle: 'Welcome!' },
     { title: 'About', subtitle: 'Meet Us!' },
     { title: 'Store', subtitle: 'Bags!' },
-    { title: 'Contact', subtitle: 'Puppies!' }
   ];
 
   return (
